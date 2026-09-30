@@ -34,4 +34,4 @@ try {
 
     // Teste próvisório:
     }
-    var_dump($conexao);
+    // var_dump($conexao);
