@@ -73,3 +73,12 @@ function atualizarFornecedor(PDO $conexao, int $id, string $nome):void
     // Executar
     $consulta->execute();
 }
+
+// Usada em fornecedores/excluir.php
+function excluirFornecedor(PDO $conexao, int $id):void
+{
+    $sql = "DELETE FROM fornecedores WHERE id = :id";
+    $consulta = $conexao->prepare($sql);
+    $consulta->bindValue(":id", $id);
+    $consulta->execute();
+}
