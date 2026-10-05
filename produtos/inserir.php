@@ -2,10 +2,35 @@
 // produtos/inserir.php
 require_once "../src/fornecedor_crud.php";
 require_once "../src/produto_crud.php";
+if ($_SERVER['REQUEST_METHOD'] === "POST") {
+    $nome = $_POST['nome'];
+    $descricao = $_POST['descricao'];
+    $preco = $_POST['preco'];
+    $quantidade = $_POST['quantidade'];
+    $fornecedorId = $_POST['fornecedorId'];
+    inserirProduto($conexao, $nome, $descricao, $preco, $quantidade, $fornecedorId);
+    header("location:listar.php");
+    exit;
+}
 
 // Buscando a lista de fornecedores já existentes
 // Isso é necessário para o campo de seleção de fornecedores no formulário
 $fornecedores = buscarFornecedores($conexao);
+
+/* Exercícios: */
+
+// 1) Detectar o acionamento do formulário de inserção
+
+// 2) Capturar os dados do formulário
+
+// 3) Chamar a função de inserir e passar os dados para ela
+
+// 4) Redirecionar para a página que mostra os produtos
+
+// 5) Cadastre pelo menos 3 produtos (invente os dados)
+
+// 6) Veja também no phpMyAdmin se está tudo OK na tabela produtos
+
 ?>
 
 <!DOCTYPE html>
