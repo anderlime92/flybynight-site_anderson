@@ -3,9 +3,9 @@
 require_once "../src/produto_crud.php";
 $produtos = buscarProdutos($conexao);
 
-echo "<pre>";
+/* echo "<pre>";
 var_dump($produtos);
-echo "</pre>";
+echo "</pre>"; */
 ?>
 
 <!DOCTYPE html>
