@@ -1,6 +1,6 @@
 <?php
 // produtos/listar.php
-require_once "../srcproduto_crud.php";
+require_once "../src/produto_crud.php";
 $produtos = buscarProdutos($conexao);
 
 echo "<pre>";
