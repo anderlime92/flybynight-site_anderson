@@ -8,8 +8,8 @@ function buscarProdutos(PDO $conexao): array
     $sql = "SELECT 
                 produtos.id, 
                 produtos.nome AS nome_produto, 
-                produtos.preco, 
-                produtos.quantidade, 
+                produtos.preco AS nome_preco, 
+                produtos.quantidade AS nome_quantidade, 
                 fornecedores.nome AS nome_fornecedor
             FROM produtos JOIN fornecedores
             ON fornecedores.id = produtos.fornecedor_id
