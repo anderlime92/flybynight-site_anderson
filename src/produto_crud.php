@@ -29,7 +29,7 @@ function inserirProduto(
     ):void
 {
     $sql = "INSERT INTO produtos(nome, descricao, preco, quantidade, fornecedor_id)
-            VALUES(:nome, :descricao, :preco, :quantidade, fornecedor_id)";
+            VALUES(:nome, :descricao, :preco, :quantidade, :fornecedor_id)";
 
     $consulta = $conexao->prepare($sql);
 
