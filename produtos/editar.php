@@ -84,13 +84,7 @@ $produto = buscarProdutoPorId($conexao, $id);
                     <option value=""></option>
                     <!-- PARTE 1 -->
                     <!-- Se PK de fornecedor for igual à FK de produto, selecione o fornecedor -->
-                     <?php foreach ($fornecedores as $fornecedor): ?>
-                        <option
-                        <?=  $fornecedor["id"] === $produto["fornecedor_id"] ? 'selected' : '' ?>
-                        value="<?= $fornecedor['id'] ?>">
-                            <?= $fornecedor['nome'] ?>
-                        </option>
-                     <?php endforeach ?>
+                     
                     <!-- 6) DESAFIO
                      
                     6.1) Usando foreach, acesse os $fornecedores e mostre na tag <option> os nomes de cada fornecedor.
@@ -98,6 +92,17 @@ $produto = buscarProdutoPorId($conexao, $id);
 
                     6.2) O fornecedor daquele produto que está sendo exibido, já DEVE VIR SELECIONADO. Programe os recursos para isso acontecer.
                     -->
+                    <?php foreach ($fornecedores as $fornecedor): ?>
+                    <!-- A condicional abaixo(feita dentro da tag <option>) faz com que o fornecedor do produto que está sendo editado já venha selecionado. A lógica geral é: 
+                            
+                             Se o id do fornecedor (que vem de $fornecedor['id']) for o mesmo do que está registrado no produto (que vem de $produto['fornecedor_id']), então aplique o atributo 'selected'. Caso contrário, não faça nada. 
+                             -->
+                        <option
+                        <?=  $fornecedor['id'] === $produto["fornecedor_id"] ? 'selected' : '' ?>
+                        value="<?= $fornecedor['id'] ?>">
+                            <?= $fornecedor['nome'] ?>
+                        </option>
+                    <?php endforeach ?>
                 </select>
             </div>
             <button type="submit">Atualizar</button>
