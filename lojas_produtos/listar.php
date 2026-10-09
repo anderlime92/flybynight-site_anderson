@@ -32,6 +32,19 @@
                 </thead>
                 <tbody>
                     <!-- Aqui serão geradas as linhas com os dados e as ações Editar e Excluir de cada registro. -->
+                     <?php foreach (): ?>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <a href=""></a>
+                                <a href=""></a>
+                            </td>
+                        </tr>
+                     <?php endforeach; ?>
                 </tbody>
             </table>
         </div>
